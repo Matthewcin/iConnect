@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2024 a las 23:16:58
+-- Tiempo de generación: 25-09-2024 a las 21:50:34
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -100,14 +100,6 @@ CREATE TABLE `ventas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`id`, `cliente_id`, `telefono_id`, `fecha`, `pago_final`) VALUES
-(1, 1, 1, '2024-09-18', 0),
-(2, 1, 1, '2024-09-18', 0);
-
---
 -- Índices para tablas volcadas
 --
 
@@ -141,8 +133,7 @@ ALTER TABLE `telefonos`
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cliente_id` (`cliente_id`),
-  ADD KEY `telefono_id` (`telefono_id`),
-  ADD KEY `pago_final` (`pago_final`);
+  ADD KEY `telefono_id` (`telefono_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -170,7 +161,7 @@ ALTER TABLE `telefonos`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -181,8 +172,7 @@ ALTER TABLE `ventas`
 --
 ALTER TABLE `ventas`
   ADD CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`telefono_id`) REFERENCES `telefonos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ventas_ibfk_3` FOREIGN KEY (`pago_final`) REFERENCES `telefonos` (`precio`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `ventas_ibfk_2` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

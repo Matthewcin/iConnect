@@ -9,8 +9,7 @@ esta base de datos recopila datos de empleados, clientes, telefonos y ventas con
 ![iConnect-Diagrama](https://raw.githubusercontent.com/Matthewcin/iConnect/refs/heads/main/iConnect-Diagrama.jfif)
 
 # Información Adicional:
-* Esta base de datos cuenta con 4 tablas:
+* Esta base de datos cuenta con 3 tablas:
 - Clientes
 - Telefonos
-- Ventas
-- Empleados
+- Usuario

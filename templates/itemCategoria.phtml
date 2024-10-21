@@ -1,0 +1,43 @@
+<?php
+include 'header.phtml';
+require_once './app/controllers/controller.categorias.php';
+
+// Obtener el id de la categoría desde el router
+$categoria_id = $params[1]; // Asumiendo que el ID está en el segundo parámetro
+
+// Llamar a la función para obtener teléfonos y categoría
+$resultado = getTelefonosByCategoria($categoria_id);
+$telefonos = $resultado['telefonos'];
+$categoria = $resultado['categoria'];
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ítems en <?php echo $categoria['nombre']; ?></title>
+</head>
+<body>
+    <h1>Ítems en la categoría: <?php echo $categoria['nombre']; ?></h1>
+    <ul>
+        <?php if ($telefonos): ?>
+            <?php foreach ($telefonos as $telefono): ?>
+                <li>
+                    <a href="<?php echo BASE_URL; ?>detalle/<?php echo $telefono['id']; ?>">
+                        <?php echo $telefono['modelo']; ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No hay ítems en esta categoría.</p>
+        <?php endif; ?>
+    </ul>
+    <a href="<?php echo BASE_URL; ?>categorias">Volver a categorías</a>
+    <br>
+    <a href="<?php echo BASE_URL; ?>inicio">Volver al listado</a>
+</body>
+</html>
+
+<?php
+include 'footer.phtml';
+?>

@@ -1,0 +1,22 @@
+<?php
+require_once './app/controllers/controller.telefonos.php';
+$telefonos = getTelefonos(); // Obtener los teléfonos
+$title = "Modo Administrador - Gestionar Items"; // Título para la plantilla
+include 'header.phtml'; // Incluir el header
+?>
+
+<h1>Gestionar Items</h1>
+<a href="<?php echo BASE_URL; ?>agregar-item">Agregar Item</a>
+<ul>
+    <?php foreach ($telefonos as $telefono): ?>
+        <li>
+            <?php echo htmlspecialchars($telefono['modelo']); ?>
+            <a href="editar-item/<?php echo $telefono['id']; ?>">Editar</a>
+            <a href="eliminar-item/<?php echo $telefono['id']; ?>">Eliminar</a>
+            <a href="detalle/<?php echo $telefono['id']; ?>">Ver Detalles</a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<a href="<?php echo BASE_URL; ?>dashboard">Volver al Dashboard</a>
+
+<?php include 'footer.phtml'; // Incluir el footer ?>

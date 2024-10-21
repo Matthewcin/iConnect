@@ -1,0 +1,24 @@
+<?php
+require_once './app/dashboard.php';
+require_once './app/controllers/controller.telefonos.php';
+include 'header.phtml';
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Teléfono</title>
+</head>
+<body>
+    <h1><?php echo $telefono['modelo']; ?></h1>
+    <img src="<?php echo $telefono['img']; ?>" alt="<?php echo $telefono['modelo']; ?>">
+    <p><strong>Descripción:</strong> <?php echo $telefono['descripcion']; ?></p>
+    <p><strong>Precio:</strong> $<?php echo $telefono['precio']; ?></p>
+    <a href="<?php echo BASE_URL; ?>inicio">Volver al listado</a>
+</body>
+</html>
+
+<?php
+include 'footer.phtml';
+?>

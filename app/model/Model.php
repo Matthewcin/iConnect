@@ -19,7 +19,7 @@ class Model {
         $tables = $query->fetchAll(PDO::FETCH_ASSOC);
 
         if (count($tables) == 0) {
-            // Si no hay tablas, ejecutar el script SQL desde perfumeria.sql
+            // Si no hay tablas, ejecutar el script SQL desde iConnect.sql
             $sqlFilePath = __DIR__ . '../../db_iconnect.sql';
 
             if (file_exists($sqlFilePath)) {

@@ -1,0 +1,43 @@
+<?php include 'templates/header.phtml'; // Incluir el header ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Modo Administrador - Editar Item</title>
+</head>
+<body>
+    <?php if ($telefono): ?>
+        <h1>Editar Item '<?php echo $telefono['modelo']; ?>'</h1>
+        <form method="POST" action="<?php echo BASE_URL; ?>actualizar-item/<?php echo $telefono['id']; ?>">
+            <label>Modelo:</label>
+            <input type="text" name="modelo" value="<?php echo $telefono['modelo']; ?>" required>
+            <br>
+            <label>Precio:</label>
+            <input type="number" name="precio" value="<?php echo $telefono['precio']; ?>" required>
+            <br>
+            <label>Descripción:</label>
+            <textarea name="descripcion" required><?php echo $telefono['descripcion']; ?></textarea>
+            <br>
+            <label>Categoría:</label>
+            <select name="categoria_id" required>
+                <?php foreach ($categorias as $categoria): ?>
+                    <option value="<?php echo $categoria['id']; ?>" <?php echo ($categoria['id'] == $telefono['categoria_id']) ? 'selected' : ''; ?>>
+                        <?php echo $categoria['nombre']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <br>
+            <label>Imagen (URL):</label>
+            <input type="text" name="imagen" value="<?php echo $telefono['img']; ?>">
+            <br>
+            <button type="submit">Actualizar</button>
+        </form>
+    <?php else: ?>
+        <p>Teléfono no encontrado.</p>
+    <?php endif; ?>
+    <a href="<?php echo BASE_URL; ?>listar-item">Volver al listado</a>
+</body>
+</html>
+
+<?php include 'templates/footer.phtml'; ?>

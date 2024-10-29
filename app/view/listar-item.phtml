@@ -1,0 +1,32 @@
+<?php include 'templates/header.phtml'; // Incluir el header ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Modo Administrador - Gestionar Items</title>
+</head>
+<body>
+    <h1>Gestionar Items</h1>
+
+    <!-- Enlace para agregar un nuevo ítem -->
+    <a href="<?php echo BASE_URL; ?>agregar-item">Agregar Item</a>
+
+    <ul>
+        <!-- Iterar sobre los teléfonos obtenidos -->
+        <?php foreach ($telefonos as $telefono): ?>
+            <li>
+                <?php echo $telefono['modelo']; ?>
+                <a href="<?php echo BASE_URL; ?>editar-item/<?php echo $telefono['id']; ?>">Editar</a>
+                <a href="<?php echo BASE_URL; ?>eliminar-item/<?php echo $telefono['id']; ?>">Eliminar</a>
+                <a href="<?php echo BASE_URL; ?>detalle/<?php echo $telefono['id']; ?>">Ver Detalles</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+    <!-- Enlace para volver al dashboard -->
+    <a href="<?php echo BASE_URL; ?>dashboard">Volver al Dashboard</a>
+</body>
+</html>
+
+<?php include 'templates/footer.phtml'; // Incluir el footer ?>

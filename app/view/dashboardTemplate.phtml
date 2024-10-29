@@ -1,0 +1,19 @@
+<?php include 'templates/header.phtml' ?>
+<body>
+    <h1 style="color:tomato">¡Estás en Modo Administrador!</h1>
+
+    <h2>Gestión de Ítems</h2>
+    <ul>
+        <li><a href="<?php echo BASE_URL; ?>listar-item">Gestionar Ítems</a></li>
+    </ul>
+
+    <h2>Gestión de Categorías</h2>
+    <ul>
+        <li><a href="<?php echo BASE_URL; ?>visor-categorias">Gestionar Categorías</a></li>
+    </ul>
+
+    <h2>Sesión</h2>
+    <ul>
+        <li><a href="<?php echo BASE_URL; ?>logout">Cerrar Sesión</a></li>
+    </ul>
+<?php include 'templates/footer.phtml' ?>

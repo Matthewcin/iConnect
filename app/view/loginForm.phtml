@@ -1,0 +1,42 @@
+<?php include 'templates/header.phtml' ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iConnect - Inicio de Sesion</title>
+    <style>
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-content">
+    <form method="POST" action="<?php echo BASE_URL; ?>login">
+    <h2 class="title">Iniciar Sesión</h2>
+
+    <!-- Mostrar mensaje de error si existe -->
+    <?php if (isset($error)): ?>
+        <div class="alert"><?php echo $error; ?></div>
+    <?php endif; ?>
+
+    <div class="input-usuario">
+        <label for="usuario">Usuario:</label>
+        <input type="text" name="usuario" required>
+    </div>
+
+    <div class="input-password">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" name="password" required>
+    </div>
+
+    <div class="btn-login">
+        <input name="ingresar" type="submit" value="Iniciar Sesión">
+    </div>
+</form>
+    </div>
+</body>
+</html>
+<?php include 'templates/footer.phtml' ?>

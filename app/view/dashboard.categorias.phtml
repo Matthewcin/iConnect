@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Modo Administrador - Categorías</title>
+</head>
+<body>
+    <h1>Gestión de Categorías</h1>
+
+    <h2>Categorías Disponibles</h2>
+    <ul>
+        <!-- Iterar sobre las categorías obtenidas desde el controlador -->
+        <?php if (!empty($categorias)): ?>
+            <?php foreach ($categorias as $categoria): ?>
+                <li>
+                    <?php echo $categoria['nombre']; ?>
+                    <a href="<?php echo BASE_URL; ?>editar-categoria/<?php echo $categoria['id']; ?>">Editar</a>
+                    <a href="<?php echo BASE_URL; ?>eliminar-categoria/<?php echo $categoria['id']; ?>">Eliminar</a>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No hay categorías disponibles.</p>
+        <?php endif; ?>
+    </ul>
+
+    <a href="<?php echo BASE_URL; ?>agregar-categoria">Agregar Nueva Categoría</a>
+    <br>
+    <a href="<?php echo BASE_URL; ?>dashboard">Volver al Dashboard</a>
+</body>
+</html>

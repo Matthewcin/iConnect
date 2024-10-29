@@ -1,0 +1,27 @@
+<?php include 'templates/header.phtml'; // Incluir el header ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Categorías</title>
+</head>
+<body>
+    <h1>Lista de Categorías</h1>
+    <ul>
+        <!-- Mostrar las categorías -->
+        <?php foreach ($categorias as $categoria): ?>
+            <li>
+                <a href="<?php echo BASE_URL; ?>itemCategoria/<?php echo $categoria['id']; ?>">
+                    <?php echo $categoria['nombre']; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+    <!-- Enlaces para navegación -->
+    <a href="<?php echo BASE_URL; ?>inicio">Volver al listado de teléfonos</a>
+</body>
+</html>
+
+<?php include 'templates/footer.phtml'; ?>

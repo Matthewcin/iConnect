@@ -1,0 +1,23 @@
+<?php include 'templates/header.phtml' ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iConnect - Tienda de Teléfonos Xiaomi</title>
+</head>
+<body>
+    <h1>Listado de Teléfonos</h1>
+
+    <ul>
+        <?php foreach ($telefonos as $telefono): ?>
+            <li>
+                <strong><?php echo $telefono['modelo']; ?></strong><br>
+                Precio: $<?php echo $telefono['precio']; ?><br>
+                <a href="detalle/<?php echo $telefono['id']; ?>">Ver detalles</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</body>
+</html>
+<?php include 'templates/footer.phtml'; ?>

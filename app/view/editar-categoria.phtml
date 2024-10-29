@@ -1,0 +1,21 @@
+<?php include 'templates/header.phtml'; ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Categoría</title>
+</head>
+<body>
+    <h1>Editar Categoría</h1>
+    <!-- Formulario para editar la categoría -->
+    <form method="POST" action="<?php echo BASE_URL; ?>actualizar-categoria/<?php echo $categoria['id']; ?>">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="<?php echo $categoria['nombre']; ?>" required>
+        <button type="submit">Actualizar</button>
+    </form>
+    <a href="<?php echo BASE_URL; ?>visor-categorias">Volver a la lista de categorías</a>
+</body>
+</html>
+
+<?php include 'templates/footer.phtml'; ?>

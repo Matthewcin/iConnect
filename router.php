@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-require_once 'app/controller/telefonoController.php'; // Controlador de teléfonos
-require_once 'app/controller/categoriaController.php'; // Controlador de categorías si lo necesitas
+require_once 'app/controller/telefonoController.php';
+require_once 'app/controller/categoriaController.php';
 require_once 'app/controller/authController.php';
 require_once 'app/controller/dashboardController.php';
 

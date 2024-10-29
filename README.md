@@ -6,7 +6,7 @@ Este proyecto diseña una base de datos y una aplicación web para una tienda de
 
 ## Diagrama de la Base de Datos
 
-![Diagrama de la Base de Datos](/iConnect/iConnect-Diagrama.jfif)
+![Diagrama de la Base de Datos](/iConnect-Diagrama.jfif)
 
 ## Estructura de la Base de Datos
 
